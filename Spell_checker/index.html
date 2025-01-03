@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spell Checker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Spell Checker</h1>
+    <div class="container">
+        <!-- Input Textarea for User on the left -->
+        <textarea id="inputText" rows="4" placeholder="Enter text here..."></textarea>
+
+        <!-- Output Textarea for Corrected Sentence on the right -->
+        <textarea id="outputText" rows="4" readonly placeholder="Corrected sentence will appear here..."></textarea>
+    </div>
+    <br>
+    <!-- Button to Check Spelling -->
+    <div style="text-align: center;">
+        <button onclick="checkSpelling()">Check Spelling</button>
+    </div>
+
+    <script>
+        function checkSpelling() {
+            const inputText = document.getElementById("inputText").value;
+
+            fetch('http://127.0.0.1:5000/spellcheck', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ text: inputText })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.corrected_sentence) {
+                        document.getElementById("outputText").value = data.corrected_sentence;
+                    } else {
+                        document.getElementById("outputText").value = "Error: " + data.error;
+                    }
+                })
+                .catch(error => {
+                    document.getElementById("outputText").value = "Error: " + error;
+                });
+        }
+    </script>
+</body>
+
+</html>
