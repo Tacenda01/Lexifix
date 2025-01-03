@@ -1,20 +1,11 @@
-To write the provided details in a **README.md** file, you need to create the file and add the content in markdown format. Here's how you can structure it step-by-step:
-
-1. **Create a `README.md` file**: In your project directory, create a new file named `README.md`.
-
-2. **Write the content**: Open the `README.md` file in a text editor and copy-paste the following markdown content:
-
----
-
-```markdown
-# LexiFix: Real-Time Spell-Checking Application
+ LexiFix: Real-Time Spell-Checking Application
 
 LexiFix is a C++-based real-time spell-checking application that uses advanced algorithms for efficient and accurate typo detection and correction. It integrates the Damerau-Levenshtein distance and n-gram modeling to suggest context-aware corrections for misspelled words.
 
-## 🌟 Key Features
-- **Real-Time Spell Correction**: Instantly detects and corrects typos with high accuracy.
-- **Advanced Algorithms**: Utilizes Damerau-Levenshtein and n-gram models for error detection and contextual suggestions.
-- **Efficient Design**: Optimized for performance with minimal resource consumption.
+ 🌟 Key Features
+- Real-Time Spell Correction: Instantly detects and corrects typos with high accuracy.
+- Advanced Algorithms: Utilizes Damerau-Levenshtein and n-gram models for error detection and contextual suggestions.
+- Efficient Design: Optimized for performance with minimal resource consumption.
 
 ## 🛠 Technologies Used
 - **C++**
@@ -81,6 +72,6 @@ Feel free to open an issue or submit a pull request if you want to contribute to
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 ```
 
----
+
 
 
